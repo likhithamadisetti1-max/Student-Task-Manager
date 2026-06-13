@@ -362,19 +362,21 @@ git push
 
 ---
 
+
 ## 📸 Screenshots
 
-> Add screenshots of your running app here for your portfolio/resume. Save
-> images into `assets/images/` and reference them like this:
+### Dashboard - Light Mode
+![Dashboard Light Mode](assets/images/dashboard-light-mode.png)
 
-```markdown
-![Dashboard — Light Mode](assets/images/dashboard-light.png)
-![Dashboard — Dark Mode](assets/images/dashboard-dark.png)
+### Dashboard - Dark Mode
+![Dashboard Dark Mode](assets/images/dashboard-dark-mode.png)
+
+### Add Task Modal
 ![Add Task Modal](assets/images/add-task-modal.png)
-```
 
-Good shots to capture: the full dashboard in light and dark mode, the Add
-Task modal, a filtered/searched view, and the empty state.
+### Task Completion
+![Task Completion](assets/images/completion-task.png)
+
 
 ---
 

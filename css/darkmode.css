@@ -1,0 +1,77 @@
+/* =========================================================
+   DARK MODE OVERRIDES
+   ---------------------------------------------------------
+   The app starts in light mode (the default values in
+   style.css). When <html data-theme="dark"> is set
+   (toggled by js/app.js and remembered via storage.js),
+   these variables override the defaults.
+
+   Because every component in style.css uses var(--color-*)
+   instead of hard-coded colors, simply redefining the
+   variables here re-themes the ENTIRE app — no component
+   styles need to change.
+   ========================================================= */
+
+[data-theme="dark"] {
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-alt: #273449;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-border: #334155;
+
+  /* Slightly brighter accents so they stay vivid on dark backgrounds */
+  --color-primary: #818cf8;
+  --color-primary-rgb: 129, 140, 248;
+  --color-secondary: #a5b4fc;
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* The stat cards use fixed gradients (not variables) so they
+   stay vivid in both themes — but soften them slightly for
+   dark mode so they don't feel overpowering. */
+[data-theme="dark"] .stat-card {
+  box-shadow: var(--shadow-md);
+  filter: saturate(0.9);
+}
+
+/* Code/keyboard keys need a touch more contrast on dark */
+[data-theme="dark"] kbd {
+  background-color: #334155;
+  border-color: #475569;
+  color: var(--color-text);
+}
+
+/* Smooth, app-wide theme transition.
+   Applied to the root element so color/background changes
+   animate instead of "snapping". */
+html {
+  transition: background-color 0.35s ease;
+}
+
+html,
+body,
+.navbar,
+.modal,
+.task-card,
+.stat-card,
+.progress-section,
+.toast,
+input,
+textarea,
+select,
+.btn,
+.icon-btn,
+.dropdown-menu {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
